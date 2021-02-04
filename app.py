@@ -122,7 +122,7 @@ def not_found(e):
 
 @app.route("/")
 def index():
-    return app.send_static_file("index.html")
+    return jsonify("response": "up and running")
 
 
 @app.route("/login", methods=["GET", "POST"])
