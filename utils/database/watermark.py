@@ -23,10 +23,6 @@ def apply_watermark(input):
     wtxt = "PhotoPro Copyright"
     wmdraw = ImageDraw.Draw(watermark)
 
-    e = time.time()
-
-    print("================= Time to apply watermark - {0}".format(e - s))
-
     x = w / 2
     y = h / 2
 
@@ -39,4 +35,7 @@ def apply_watermark(input):
     # save watermarked photo
     buffer = io.BytesIO()
     outphoto_rgb.save(buffer, format="JPEG")
+    e = time.time()
+
+    print("================= Time to apply watermark - {0}".format(e - s))
     return buffer
