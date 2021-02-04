@@ -1624,7 +1624,6 @@ def api_get_global_recommendations():
             photo.write(img)
             photo.close()
             img = apply_watermark(file).getvalue()
-            s = time.time()
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
@@ -1634,9 +1633,6 @@ def api_get_global_recommendations():
             elif float(score) < float(max_score):
                 max_score = float(score)
             # print(tup)
-            e = time.time()
-
-            print("================= TIME - {0}".format(e - s))
 
             processed_result.append(
                 {
