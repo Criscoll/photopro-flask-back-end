@@ -1623,8 +1623,8 @@ def api_get_global_recommendations():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            s = time.time()
             img = apply_watermark(file).getvalue()
+            s = time.time()
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
