@@ -1593,15 +1593,9 @@ def api_get_global_recommendations():
     if batch_size is None:
         batch_size = 10
 
-
-
-    s=time.time()
     conn, cur = get_conn_and_cur()
     result = get_global_recommendations(max_score, batch_size, conn, cur)
     conn.close()
-    e=time.time()
-
-    print("================= TIME - {0}".format(e-s))
 
     if result:
         processed_result = []
@@ -1610,6 +1604,8 @@ def api_get_global_recommendations():
             max_score = float(max_score)
 
         for tup in result:
+            s = time.time()
+
             (
                 id,
                 caption,
@@ -1638,6 +1634,9 @@ def api_get_global_recommendations():
             elif float(score) < float(max_score):
                 max_score = float(score)
             # print(tup)
+            e = time.time()
+
+            print("================= TIME - {0}".format(e - s))
 
             processed_result.append(
                 {
