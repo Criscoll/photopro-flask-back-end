@@ -108,7 +108,7 @@ CORS(app)
 
 
 def invalid_text(text):
-    return text is None or "'" in text or '"' in text @ app
+    return text is None or "'" in text or '"' in text
 
 
 def clean_text(text):
@@ -348,6 +348,7 @@ def api_discovery():
     if user_id == None:
         user_id = 0
     batch_size = request.args.get("batch_size")
+
     query = request.args.get("query")
 
     if query is not None:
