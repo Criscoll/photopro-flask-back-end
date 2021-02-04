@@ -4,6 +4,7 @@ import time
 
 
 def apply_watermark(input):
+    s = time.time()
     photo = Image.open(input).convert("RGBA")
     w, h = photo.size
 
@@ -22,20 +23,18 @@ def apply_watermark(input):
     wtxt = "PhotoPro Copyright"
     wmdraw = ImageDraw.Draw(watermark)
 
+    e = time.time()
+
+    print("================= Time to apply watermark - {0}".format(e - s))
+
     x = w / 2
     y = h / 2
-
-    s = time.time()
 
     # Draw watermark image and paste over base photo
     wmdraw.text((x, y), wtxt, font=wfont, fill=(255, 255, 255, 128))
     outphoto = Image.alpha_composite(photo, watermark)
     outphoto_rgb = outphoto.convert("RGB")
     photo.close()
-
-    e = time.time()
-
-    print("================= Time to apply watermark - {0}".format(e - s))
 
     # save watermarked photo
     buffer = io.BytesIO()
