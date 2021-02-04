@@ -122,7 +122,8 @@ def not_found(e):
 
 @app.route("/")
 def index():
-    return app.send_static_file("index.html")
+    return jsonify({"response": "This is my flask app"})
+    # return app.send_static_file("index.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
