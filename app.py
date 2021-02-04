@@ -122,7 +122,7 @@ def not_found(e):
 
 @app.route("/")
 def index():
-    return jsonify("response": "up and running")
+    return jsonify({"response": "up and running"})
 
 
 @app.route("/login", methods=["GET", "POST"])
