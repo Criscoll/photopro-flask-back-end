@@ -422,7 +422,7 @@ def api_discovery():
                 photo = open(file, "wb")
                 photo.write(img)
                 photo.close()
-                img = apply_watermark(file)i
+                img = apply_watermark(file)
                 img = base64.encodebytes(img).decode("utf-8")
                 if os.path.exists(file):
                     os.remove(file)
@@ -490,7 +490,7 @@ def api_discovery():
                 photo = open(file, "wb")
                 photo.write(img)
                 photo.close()
-                img = apply_watermark(file).getvalue()
+                img = apply_watermark(file)
                 img = base64.encodebytes(img).decode("utf-8")
                 if os.path.exists(file):
                     os.remove(file)
@@ -555,7 +555,7 @@ def api_profile_photos():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
@@ -1118,7 +1118,7 @@ def api_get_collection_data():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
@@ -1274,7 +1274,7 @@ def api_get_user_purchases():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
@@ -1483,7 +1483,7 @@ def api_get_related_images():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             print(tup)
             if os.path.exists(file):
@@ -1551,7 +1551,7 @@ def api_get_recommended_images():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
@@ -1623,7 +1623,7 @@ def api_get_global_recommendations():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            img = apply_watermark(file).getvalue()
+            img = apply_watermark(file)
             img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
