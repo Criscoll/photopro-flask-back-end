@@ -9,12 +9,14 @@ from PIL import ImageFont
 def apply_watermark(input):
 
     photo = Image.open(input)
-    # make the image editable
-    drawing = ImageDraw.Draw(photo)
-    black = (3, 8, 12)
-    drawing.text((0, 0), "PhotoPro Copyright", fill=black)
-
     return photo
+
+    # # make the image editable
+    # drawing = ImageDraw.Draw(photo)
+    # black = (3, 8, 12)
+    # drawing.text((0, 0), "PhotoPro Copyright", fill=black)
+
+    # return photo
 
     # s = time.time()
     # photo = Image.open(input).convert("RGBA")
