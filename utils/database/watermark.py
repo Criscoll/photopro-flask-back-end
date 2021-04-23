@@ -12,9 +12,7 @@ def apply_watermark(input):
     # make the image editable
     drawing = ImageDraw.Draw(photo)
     black = (3, 8, 12)
-    font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 40)
-    drawing.text((0, 0), "PhotoPro Copyright", fill=black, font=font)
-    photo.show()
+    drawing.text((0, 0), "PhotoPro Copyright", fill=black)
 
     return photo
 
