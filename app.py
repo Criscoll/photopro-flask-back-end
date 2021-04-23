@@ -422,7 +422,7 @@ def api_discovery():
                 photo = open(file, "wb")
                 photo.write(img)
                 photo.close()
-img = apply_watermark(file)
+                img = apply_watermark(file)
                 if os.path.exists(file):
                     os.remove(file)
 
