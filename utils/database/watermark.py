@@ -8,8 +8,8 @@ from PIL import ImageFont
 
 def apply_watermark(input):
 
-    photo = Image.open(input)
-    return photo
+    # photo = Image.open(input)
+    # return photo
 
     # # make the image editable
     # drawing = ImageDraw.Draw(photo)
@@ -17,6 +17,16 @@ def apply_watermark(input):
     # drawing.text((0, 0), "PhotoPro Copyright", fill=black)
 
     # return photo
+
+    photo = Image.open(input)
+    byte_arr = io.BytesIO()
+    photo.save(byte_arr, format="JPEG")
+    return byte_arr
+
+    # # save watermarked photo
+    # buffer = io.BytesIO()
+    # outphoto_rgb.save(buffer, format="JPEG")
+    # e = time.time()
 
     # s = time.time()
     # photo = Image.open(input).convert("RGBA")

@@ -422,9 +422,8 @@ def api_discovery():
                 photo = open(file, "wb")
                 photo.write(img)
                 photo.close()
-                with open(file, mode="rb") as f:
-                    img = f.read()
-                img = base64.b64encode(img)
+                img = apply_watermark(file).getvalue()
+                img = base64.encodebytes(img).decode("utf-8")
                 if os.path.exists(file):
                     os.remove(file)
 
@@ -491,9 +490,8 @@ def api_discovery():
                 photo = open(file, "wb")
                 photo.write(img)
                 photo.close()
-                with open(file, mode="rb") as f:
-                    img = f.read()
-                img = base64.b64encode(img)
+                img = apply_watermark(file).getvalue()
+                img = base64.encodebytes(img).decode("utf-8")
                 if os.path.exists(file):
                     os.remove(file)
                 if id < app.start_point:
@@ -557,9 +555,8 @@ def api_profile_photos():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
 
@@ -1121,9 +1118,8 @@ def api_get_collection_data():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
 
@@ -1278,9 +1274,8 @@ def api_get_user_purchases():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
             processed_result.append(
@@ -1488,9 +1483,8 @@ def api_get_related_images():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             print(tup)
             if os.path.exists(file):
                 os.remove(file)
@@ -1557,9 +1551,8 @@ def api_get_recommended_images():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
             if min_score is None:
@@ -1630,9 +1623,8 @@ def api_get_global_recommendations():
             photo = open(file, "wb")
             photo.write(img)
             photo.close()
-            with open(file, mode="rb") as f:
-                img = f.read()
-            img = base64.b64encode(img)
+            img = apply_watermark(file).getvalue()
+            img = base64.encodebytes(img).decode("utf-8")
             if os.path.exists(file):
                 os.remove(file)
             print(max_score, score)
